@@ -1,1 +1,8 @@
+To achieve high availability, I moved compute resources into private subnets and introduced an Application Load Balancer (ALB) placed in the public subnets.
+User traffic flows:
 
+Client → Internet → ALB (public subnets) → Target Group → EC2 Instances (private subnets via Auto Scaling Group)
+
+I created an Auto Scaling Group (ASG) across two Availability Zones, ensuring instances are automatically replaced if one fails.
+The ASG uses a launch template that installs Nginx and deploys the static website at boot, ensuring consistent configuration.
+This architecture ensures redundancy, automatic scaling, and secure isolation of application servers.
