@@ -1,1 +1,7 @@
-
+I launched a t3.micro EC2 instance inside the public subnet and assigned it a public IP.
+After connecting via SSH, I installed Nginx using:
+sudo apt update
+sudo apt install nginx -y
+I placed my resume HTML files inside /var/www/html and restarted Nginx to host the website on port 80.
+For security hardening, I restricted the security group to allow only HTTP (80) and SSH (22) traffic from trusted sources, disabled password authentication, applied OS updates, and removed unnecessary packages.
+This ensures a secure, lightweight, and publicly accessible static website.
