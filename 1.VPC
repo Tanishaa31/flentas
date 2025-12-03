@@ -1,1 +1,4 @@
-
+I designed a custom VPC to logically isolate all networking resources.
+The VPC uses the CIDR block 10.0.0.0/16, and creating multiple subnets. I divided this VPC into two public and two private subnets, each in  for high availability.
+Public subnets are associated with a route table that routes traffic to an Internet Gateway (IGW), while private subnets use a NAT Gateway to securely access the internet without exposing instances publicly.
+This architecture follows AWS best practices for secure and scalable network design.
